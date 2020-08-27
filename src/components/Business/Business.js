@@ -31,12 +31,14 @@ class Business extends React.Component {
           <div className='Business-reviews'>
             <h3>{business.category}</h3>
             <h3 className='rating'>
-              {business.rating + ' ' + business.rating <= 2 ? 'star' : 'stars'}
+              {business.rating +
+                ' ' +
+                (business.rating <= 2 ? 'star' : 'stars')}
             </h3>
             <p>
-              {business.reviewCount + ' ' + business.reviewCount <= 2
-                ? 'star'
-                : 'stars'}
+              {business.reviewCount +
+                ' ' +
+                (business.reviewCount <= 2 ? 'star' : 'stars')}
             </p>
           </div>
         </div>
