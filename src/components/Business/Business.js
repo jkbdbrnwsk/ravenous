@@ -22,12 +22,12 @@ class Business extends React.Component {
             <h3 className='rating'>
               {this.props.business.rating +
                 ' ' +
-                (this.props.business.rating <= 2 ? 'star' : 'stars')}
+                (this.props.business.rating < 2 ? 'star' : 'stars')}
             </h3>
             <p>
               {this.props.business.reviewCount +
                 ' ' +
-                (this.props.business.reviewCount <= 2 ? 'star' : 'stars')}
+                (this.props.business.reviewCount < 2 ? 'star' : 'stars')}
             </p>
           </div>
         </div>
