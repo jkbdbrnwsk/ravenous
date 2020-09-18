@@ -1,7 +1,7 @@
-import apiKey from './YelpKey';
+const apiKey = process.env.REACT_APP_YELP_API_KEY; // Define REACT_APP_YELP_API_KEY in .env
 
 const Yelp = {
-  search: async (term, location, sortBy) => {
+  async search(term, location, sortBy) {
     const response = await fetch(
       `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=${term}&location=${location}&sort_by=${sortBy}`,
       {
@@ -14,7 +14,7 @@ const Yelp = {
     const jsonResponse = await response.json();
 
     if (jsonResponse.businesses) {
-      jsonResponse.businesses.map((business) => {
+      return jsonResponse.businesses.map((business) => {
         return {
           id: business.id,
           imageSrc: business.image_url,
